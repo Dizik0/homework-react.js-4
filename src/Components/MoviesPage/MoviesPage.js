@@ -1,6 +1,7 @@
 import { Component } from "react";
-import Axios from "axios";
 import { Link } from "react-router-dom";
+
+import MoviesPageAPI from "../GetAPI/MoviesPageAPI";
 
 export default class MoviesPage extends Component {
   state = {
@@ -10,17 +11,21 @@ export default class MoviesPage extends Component {
 
   screachValueInput = async (e) => {
     e.preventDefault();
-
-    const response = await Axios.get(
-      `https://api.themoviedb.org/3/search/movie/?api_key=a073961347bd017bb0d5c7cd6f66c875&query=${this.state.value}`
-    );
-    this.setState({ movies: response.data.results });
+    if (this.state.value.trim()) {
+      const response = await MoviesPageAPI(this.state.value);
+      this.setState({ movies: response.data.results });
+    }
   };
 
   getValueInput = (e) => {
     this.setState({ value: e.currentTarget.value });
   };
   render() {
+    // let noMovie;
+    // if (this.state.value.length !== 0 && this.state.movies.length === 0) {
+    //   noMovie = <p>Нет такого фильма</p>;
+    // }
+
     return (
       <>
         <form onSubmit={this.screachValueInput}>
@@ -29,8 +34,12 @@ export default class MoviesPage extends Component {
             type="text"
             onChange={this.getValueInput}
           ></input>
-          <button type="submit">Поиск</button>
+          <button type="submit">
+            {/* <Link to={`movies/${movie.id}/query=${this.state.value}`}></Link> */}
+            Поиск
+          </button>
         </form>
+        {/* {noMovie} */}
         <ul>
           {this.state.movies.map((movie) => (
             <li key={movie.id}>
