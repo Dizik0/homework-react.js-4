@@ -7,21 +7,19 @@ export default class Reviews extends Component {
   };
   async componentDidMount() {
     const response = await Axios.get(
-      `https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}/reviews?api_key=a073961347bd017bb0d5c7cd6f66c875&language=en-US&page=1`
+      `https://api.themoviedb.org/3/movie/${this.props.property.match.params.movieId}/reviews?api_key=a073961347bd017bb0d5c7cd6f66c875&language=en-US&page=1`
     );
     this.setState({ reviews: response.data.results });
-    console.log(this.state.reviews);
   }
   render() {
     return (
-      <>
-        {this.state.reviews.map((review) => (
-          <div key={review.id}>
-            <h2>Autors: {review.author}</h2>
-            <p>{review.content}</p>
-          </div>
-        ))}
-      </>
+      this.props.Reviews &&
+      this.state.reviews.map(({ id, author, content }) => (
+        <div key={id}>
+          <h2>Autors: {author}</h2>
+          <p>{content}</p>
+        </div>
+      ))
     );
   }
 }
