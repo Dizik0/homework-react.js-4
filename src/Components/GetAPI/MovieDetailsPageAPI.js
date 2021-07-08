@@ -1,9 +1,11 @@
 import Axios from "axios";
 
-const MovieDetailsPageAPI = async (e) => {
-  return Axios.get(
-    `https://api.themoviedb.org/3/movie/${e}?api_key=a073961347bd017bb0d5c7cd6f66c875`
-  );
+import baseUrlApiKey from "../../../src/baseUrlApiKey.json";
+
+const MovieDetailsPageAPI = async (movieId) => {
+  const { BASE_URL, API_KEY } = baseUrlApiKey;
+
+  return Axios.get(`${BASE_URL}/3/movie/${movieId}?api_key=${API_KEY}`);
 };
 
 export default MovieDetailsPageAPI;

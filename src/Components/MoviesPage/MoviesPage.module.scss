@@ -1,0 +1,32 @@
+.itemBoxFilter {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.boxFilter {
+  padding: 20px 30px 0 30px;
+}
+
+.fromFilter {
+  display: flex;
+  justify-content: center;
+  border-radius: 100px;
+}
+
+.inputBoxFilter {
+  display: block;
+  width: 400px;
+  height: 30px;
+  margin-right: 30px;
+  font-size: 20px;
+}
+
+.bntBoxFilter {
+  margin: 0;
+  font-size: 18px;
+  border-radius: 30%;
+  border: none;
+}
+
+.listFilter {
+  margin-top: 15px;
+}

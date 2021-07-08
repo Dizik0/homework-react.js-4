@@ -1,25 +1,30 @@
 import { Component } from "react";
-import Axios from "axios";
 
+import ReviewsApi from "../GetAPI/ReviewsApi";
+import style from "./Reviews.module.scss";
 export default class Reviews extends Component {
   state = {
     reviews: [],
   };
+
   async componentDidMount() {
-    const response = await Axios.get(
-      `https://api.themoviedb.org/3/movie/${this.props.match.params.movieId}/reviews?api_key=a073961347bd017bb0d5c7cd6f66c875&language=en-US&page=1`
-    );
+    const response = await ReviewsApi(this.props.match.params.movieId);
     this.setState({ reviews: response.data.results });
   }
+
   render() {
     let reviews;
     if (this.state.reviews.length === 0) {
-      reviews = <p>We don't have any reviews for this movie</p>;
+      reviews = (
+        <p className={style.noReviews}>
+          We don't have any reviews for this movie
+        </p>
+      );
     } else {
       reviews = this.state.reviews.map(({ id, author, content }) => (
         <li key={id}>
-          <h2>Autors: {author}</h2>
-          <p>{content}</p>
+          <h2 className={style.author}>Autors: {author}</h2>
+          <p className={style.reviews}>{content}</p>
         </li>
       ));
     }

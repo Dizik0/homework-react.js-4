@@ -1,12 +1,10 @@
 import { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
+import style from "./HomePage.module.scss";
 import HomePageAPI from "../GetAPI/HomePageAPI";
 
-// const API_KEY = "a073961347bd017bb0d5c7cd6f66c875";
-// const BASE_URL = "https://api.themoviedb.org";
-
-export default class HomePage extends Component {
+class HomePage extends Component {
   state = {
     movies: [],
   };
@@ -18,16 +16,27 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <>
-        <h1>Trending today</h1>
+      <div className={style.boxTrending}>
+        <h1 className={style.titleTrending}>Trending today</h1>
         <ul>
           {this.state.movies.map((movie) => (
-            <li key={movie.id}>
-              <NavLink to={`movies/${movie.id}`}>{movie.title}</NavLink>
+            <li key={movie.id} className={style.itemTrending}>
+              <NavLink
+                to={{
+                  pathname: `movies/${movie.id}`,
+                  state: {
+                    from: this.props.location,
+                  },
+                }}
+              >
+                {movie.title}
+              </NavLink>
             </li>
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }
+
+export default withRouter(HomePage);

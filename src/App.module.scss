@@ -1,0 +1,30 @@
+body {
+  background-color: #100e19;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover,
+a:focus {
+  color: rgb(118, 0, 168);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+.loading {
+  color: white;
+}

@@ -2,6 +2,7 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 
 import MoviesPageAPI from "../GetAPI/MoviesPageAPI";
+import style from "./MoviesPage.module.scss";
 
 export default class MoviesPage extends Component {
   state = {
@@ -21,35 +22,37 @@ export default class MoviesPage extends Component {
     this.setState({ value: e.currentTarget.value });
   };
   render() {
-    // let noMovie;
-    // if (this.state.value.length !== 0 && this.state.movies.length === 0) {
-    //   noMovie = <p>Нет такого фильма</p>;
-    // }
-
     return (
-      <>
-        <form onSubmit={this.screachValueInput}>
+      <div className={style.boxFilter}>
+        <form onSubmit={this.screachValueInput} className={style.fromFilter}>
           <input
             value={this.state.value}
             type="text"
             onChange={this.getValueInput}
+            className={style.inputBoxFilter}
+            placeholder="Введите название фильма"
           ></input>
-          <button type="submit">
-            {/* <Link to={`movies/${movie.id}/query=${this.state.value}`}></Link> */}
-            Поиск
+          <button type="submit" className={style.bntBoxFilter}>
+            🔍
           </button>
         </form>
-        {/* {noMovie} */}
-        <ul>
+        <ul className={style.listFilter}>
           {this.state.movies.map((movie) => (
-            <li key={movie.id}>
-              <Link to={`movies/${movie.id}`}>{movie.title}</Link>
+            <li key={movie.id} className={style.itemBoxFilter}>
+              <Link
+                to={{
+                  pathname: `movies/${movie.id}`,
+                  state: {
+                    from: this.props.location,
+                  },
+                }}
+              >
+                {movie.title}
+              </Link>
             </li>
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }
-
-//  to={`MovieDetailsPage/${movie.id}`

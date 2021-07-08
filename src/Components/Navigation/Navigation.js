@@ -1,15 +1,32 @@
 import { NavLink } from "react-router-dom";
 
+import style from "./Navigation.module.scss";
+
 const Navigation = () => {
   return (
-    <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-        <NavLink to="/movies">Movies</NavLink>
-      </li>
-    </ul>
+    <div className={style.boxNav}>
+      <ul className={style.list}>
+        <li className={style.item}>
+          <NavLink
+            exact
+            to="/"
+            className={style.navigation}
+            activeClassName={style.active}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className={style.item}>
+          <NavLink
+            to="/movies"
+            className={style.navigation}
+            activeClassName={style.active}
+          >
+            Movies
+          </NavLink>
+        </li>
+      </ul>
+    </div>
   );
 };
 

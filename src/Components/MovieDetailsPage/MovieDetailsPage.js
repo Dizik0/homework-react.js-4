@@ -4,77 +4,103 @@ import { Route, NavLink } from "react-router-dom";
 import Cast from "../Cast/Cast";
 import Reviews from "../Reviews/Reviews";
 import MovieDetailsPageAPI from "../GetAPI/MovieDetailsPageAPI";
+import style from "./MovieDetailsPage.module.scss";
 
 export default class MovieDetailsPage extends Component {
   state = {
     movie: {},
-    // Cast: false,
-    // Reviews: false,
   };
   async componentDidMount() {
     const response = await MovieDetailsPageAPI(this.props.match.params.movieId);
     this.setState({ movie: response.data });
   }
+  BtnBack = () => {
+    const { history, location } = this.props;
+    if (location.state && location.state.from) {
+      history.push(location.state.from);
+    } else {
+      history.push("/");
+    }
+  };
 
-  // OnOffCast = () => {
-  //   this.setState({ Cast: !this.state.Cast });
-  //   if (this.state.Cast === true) {
-  //     return this.setState({ Reviews: !this.state.Cast });
-  //   }
-  // };
-  // OnOffReviews = () => {
-  //   this.setState({ Reviews: !this.state.Reviews });
-  //   if (this.state.Reviews === true) {
-  //     return this.setState({ Cast: !this.state.Reviews });
-  //   }
-  // };
-
-  // ears = () => {
-  //   this.setState({
-  //     releaseDate: new Date(this.state.releaseDate).getFullYear(),
-  //   });
-  //   console.log(this.state.releaseDate);
-  // };
   render() {
-    const { title, poster_path, release_date, overview } = this.state.movie;
-
-    new Date(release_date).getFullYear();
+    const { title, poster_path, release_date, overview, genres, vote_average } =
+      this.state.movie;
+    const { movieId } = this.props.match.params;
     return (
-      <>
-        <h1>
-          {title}({new Date(release_date).getFullYear()})
-        </h1>
+      <div className={style.boxDetail}>
+        <button
+          type="button"
+          onClick={this.BtnBack}
+          className={style.btnDetail}
+        >
+          ← Back
+        </button>
 
-        {poster_path ? (
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-            alt="poster"
-          />
-        ) : (
-          <img
-            src="https://diemmecaffe.ru/images/image-not-found.png"
-            alt="not found"
-          />
-        )}
+        <div className={style.boxMovie}>
+          <div className={style.boxImg}>
+            {poster_path ? (
+              <img
+                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                alt="poster"
+                className={style.posterImg}
+              />
+            ) : (
+              <img
+                src="https://diemmecaffe.ru/images/image-not-found.png"
+                alt="not found"
+                className={style.posterError}
+              />
+            )}
+          </div>
+          <div className={style.boxInformation}>
+            {release_date && (
+              <h1 className={style.titleDetail}>
+                {title}({new Date(release_date).getFullYear()})
+              </h1>
+            )}
+            {vote_average && (
+              <p className={style.textDetail}>User Score: {vote_average}</p>
+            )}
 
-        <h2>Overview</h2>
-        <p>{overview}</p>
-        <h3>Additional information</h3>
-        <ul>
+            <h2 className={style.titleDetail}>Overview</h2>
+            <p className={style.textDetail}>{overview}</p>
+            <h2 className={style.titleDetail}>Genres</h2>
+            <ul>
+              {genres && genres.length !== 0 ? (
+                genres.map((i) => (
+                  <li key={i.id} className={style.textDetail}>
+                    {i.name}
+                  </li>
+                ))
+              ) : (
+                <li>No information</li>
+              )}
+            </ul>
+          </div>
+        </div>
+        <h2 className={style.Additional}>Additional information</h2>
+        <ul className={style.navLinkList}>
           <li>
-            <NavLink to={`/movies/${this.props.match.params.movieId}/Cast`}>
+            <NavLink
+              to={`/movies/${movieId}/Cast`}
+              className={style.navLinkDetail}
+            >
               Cast
             </NavLink>
           </li>
           <li>
-            <NavLink to={`/movies/${this.props.match.params.movieId}/Reviews`}>
+            <NavLink
+              to={`/movies/${movieId}/Reviews`}
+              className={style.navLinkDetail}
+            >
               Reviews
             </NavLink>
           </li>
         </ul>
         <Route path="/movies/:movieId/Cast" component={Cast} />
         <Route path="/movies/:movieId/Reviews" component={Reviews} />
-      </>
+      </div>
     );
   }
 }

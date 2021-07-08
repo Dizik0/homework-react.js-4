@@ -1,0 +1,27 @@
+.navigation {
+  color: rgb(118, 0, 168);
+}
+
+.navigation:hover,
+.navigation:focus {
+  color: rgb(179, 0, 255);
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  margin-right: 30px;
+  display: block;
+  font-size: 20px;
+}
+
+.boxNav {
+  background-color: #1f1b2e;
+  border-bottom: 1px solid black;
+  padding: 15px 30px 15px 30px;
+}
+.active {
+  color: rgb(179, 0, 255);
+}
