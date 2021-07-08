@@ -1,0 +1,36 @@
+{
+  "files": {
+    "static/js/0.e8669fcb.chunk.js": "/homework-react.js-4/static/js/0.e8669fcb.chunk.js",
+    "static/js/0.e8669fcb.chunk.js.map": "/homework-react.js-4/static/js/0.e8669fcb.chunk.js.map",
+    "HomePage.css": "/homework-react.js-4/static/css/HomePage.e6fca9e8.chunk.css",
+    "HomePage.js": "/homework-react.js-4/static/js/HomePage.f5685f4f.chunk.js",
+    "HomePage.js.map": "/homework-react.js-4/static/js/HomePage.f5685f4f.chunk.js.map",
+    "MovieDetailsPage.css": "/homework-react.js-4/static/css/MovieDetailsPage.edfd235b.chunk.css",
+    "MovieDetailsPage.js": "/homework-react.js-4/static/js/MovieDetailsPage.483eff73.chunk.js",
+    "MovieDetailsPage.js.map": "/homework-react.js-4/static/js/MovieDetailsPage.483eff73.chunk.js.map",
+    "MoviesPage.css": "/homework-react.js-4/static/css/MoviesPage.5325df3c.chunk.css",
+    "MoviesPage.js": "/homework-react.js-4/static/js/MoviesPage.b622aacb.chunk.js",
+    "MoviesPage.js.map": "/homework-react.js-4/static/js/MoviesPage.b622aacb.chunk.js.map",
+    "main.css": "/homework-react.js-4/static/css/main.4fefd287.chunk.css",
+    "main.js": "/homework-react.js-4/static/js/main.3a68f4ef.chunk.js",
+    "main.js.map": "/homework-react.js-4/static/js/main.3a68f4ef.chunk.js.map",
+    "runtime-main.js": "/homework-react.js-4/static/js/runtime-main.f798a2f1.js",
+    "runtime-main.js.map": "/homework-react.js-4/static/js/runtime-main.f798a2f1.js.map",
+    "static/js/6.e82e8e3f.chunk.js": "/homework-react.js-4/static/js/6.e82e8e3f.chunk.js",
+    "static/js/6.e82e8e3f.chunk.js.map": "/homework-react.js-4/static/js/6.e82e8e3f.chunk.js.map",
+    "static/js/7.d46c736f.chunk.js": "/homework-react.js-4/static/js/7.d46c736f.chunk.js",
+    "static/js/7.d46c736f.chunk.js.map": "/homework-react.js-4/static/js/7.d46c736f.chunk.js.map",
+    "index.html": "/homework-react.js-4/index.html",
+    "static/css/HomePage.e6fca9e8.chunk.css.map": "/homework-react.js-4/static/css/HomePage.e6fca9e8.chunk.css.map",
+    "static/css/MovieDetailsPage.edfd235b.chunk.css.map": "/homework-react.js-4/static/css/MovieDetailsPage.edfd235b.chunk.css.map",
+    "static/css/MoviesPage.5325df3c.chunk.css.map": "/homework-react.js-4/static/css/MoviesPage.5325df3c.chunk.css.map",
+    "static/css/main.4fefd287.chunk.css.map": "/homework-react.js-4/static/css/main.4fefd287.chunk.css.map",
+    "static/js/6.e82e8e3f.chunk.js.LICENSE.txt": "/homework-react.js-4/static/js/6.e82e8e3f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f798a2f1.js",
+    "static/js/6.e82e8e3f.chunk.js",
+    "static/css/main.4fefd287.chunk.css",
+    "static/js/main.3a68f4ef.chunk.js"
+  ]
+}
