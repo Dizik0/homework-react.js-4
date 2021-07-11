@@ -3,7 +3,7 @@ import { Component } from "react";
 import ReviewsApi from "../GetAPI/ReviewsApi";
 import style from "./Reviews.module.scss";
 
-export class Reviews extends Component {
+export default class Reviews extends Component {
   state = {
     reviews: [],
   };
@@ -34,6 +34,6 @@ export class Reviews extends Component {
       ));
     }
 
-    return <ul>{reviews}</ul>;
+    return <ul>{review}</ul>;
   }
 }

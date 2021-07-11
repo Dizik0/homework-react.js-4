@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import style from "./Navigation.module.scss";
 
-export const Navigation = () => {
+const Navigation = () => {
   return (
     <div className={style.boxNav}>
       <ul className={style.list}>
@@ -29,3 +29,5 @@ export const Navigation = () => {
     </div>
   );
 };
+
+export default Navigation;

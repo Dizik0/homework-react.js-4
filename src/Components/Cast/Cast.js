@@ -4,7 +4,7 @@ import CastApi from "../GetAPI/CastApi";
 import style from "./Cast.module.scss";
 import imgNotFound from "../../img/123588579.jpg";
 
-export class Cast extends Component {
+export default class Cast extends Component {
   state = {
     cast: [],
   };

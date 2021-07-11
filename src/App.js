@@ -3,7 +3,7 @@ import { Component, Suspense, lazy } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import style from "./App.module.scss";
 
-import { Navigation } from "./Components/Navigation";
+import Navigation from "./Components/Navigation/Navigation";
 
 const HomePage = lazy(() =>
   import("./Components/HomePage/HomePage" /*webpackChunkName: "HomePage" */)

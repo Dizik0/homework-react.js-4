@@ -1,8 +1,8 @@
 import { Component } from "react";
 import { Route, NavLink } from "react-router-dom";
 
-import { Cast } from "../Cast";
-import { Reviews } from "../Reviews";
+import Cast from "../Cast/Cast";
+import Reviews from "../Reviews/Reviews";
 import MovieDetailsPageAPI from "../GetAPI/MovieDetailsPageAPI";
 import style from "./MovieDetailsPage.module.scss";
 
