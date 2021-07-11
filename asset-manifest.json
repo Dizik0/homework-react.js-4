@@ -6,16 +6,16 @@
     "HomePage.js": "/homework-react.js-4/static/js/HomePage.49ab2f3d.chunk.js",
     "HomePage.js.map": "/homework-react.js-4/static/js/HomePage.49ab2f3d.chunk.js.map",
     "MovieDetailsPage.css": "/homework-react.js-4/static/css/MovieDetailsPage.2f1609dc.chunk.css",
-    "MovieDetailsPage.js": "/homework-react.js-4/static/js/MovieDetailsPage.0cc9b10d.chunk.js",
-    "MovieDetailsPage.js.map": "/homework-react.js-4/static/js/MovieDetailsPage.0cc9b10d.chunk.js.map",
+    "MovieDetailsPage.js": "/homework-react.js-4/static/js/MovieDetailsPage.1f733598.chunk.js",
+    "MovieDetailsPage.js.map": "/homework-react.js-4/static/js/MovieDetailsPage.1f733598.chunk.js.map",
     "MoviesPage.css": "/homework-react.js-4/static/css/MoviesPage.a34c7d85.chunk.css",
     "MoviesPage.js": "/homework-react.js-4/static/js/MoviesPage.af47cc67.chunk.js",
     "MoviesPage.js.map": "/homework-react.js-4/static/js/MoviesPage.af47cc67.chunk.js.map",
     "main.css": "/homework-react.js-4/static/css/main.4fefd287.chunk.css",
-    "main.js": "/homework-react.js-4/static/js/main.dd0d8299.chunk.js",
-    "main.js.map": "/homework-react.js-4/static/js/main.dd0d8299.chunk.js.map",
-    "runtime-main.js": "/homework-react.js-4/static/js/runtime-main.c3e937bd.js",
-    "runtime-main.js.map": "/homework-react.js-4/static/js/runtime-main.c3e937bd.js.map",
+    "main.js": "/homework-react.js-4/static/js/main.3c81d1e1.chunk.js",
+    "main.js.map": "/homework-react.js-4/static/js/main.3c81d1e1.chunk.js.map",
+    "runtime-main.js": "/homework-react.js-4/static/js/runtime-main.e5ef17be.js",
+    "runtime-main.js.map": "/homework-react.js-4/static/js/runtime-main.e5ef17be.js.map",
     "static/js/6.969ee4bc.chunk.js": "/homework-react.js-4/static/js/6.969ee4bc.chunk.js",
     "static/js/6.969ee4bc.chunk.js.map": "/homework-react.js-4/static/js/6.969ee4bc.chunk.js.map",
     "static/js/7.d46c736f.chunk.js": "/homework-react.js-4/static/js/7.d46c736f.chunk.js",
@@ -29,9 +29,9 @@
     "static/media/123588579.16383d75.jpg": "/homework-react.js-4/static/media/123588579.16383d75.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.c3e937bd.js",
+    "static/js/runtime-main.e5ef17be.js",
     "static/js/6.969ee4bc.chunk.js",
     "static/css/main.4fefd287.chunk.css",
-    "static/js/main.dd0d8299.chunk.js"
+    "static/js/main.3c81d1e1.chunk.js"
   ]
 }
