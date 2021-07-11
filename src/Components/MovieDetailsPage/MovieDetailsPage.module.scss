@@ -13,7 +13,6 @@
   border: none;
 }
 
-.btnDetail:hover,
 .btnDetail:focus {
   background-color: rgb(179, 0, 255);
   color: black;
@@ -31,7 +30,6 @@
   margin-right: 30px;
 }
 
-.navLinkDetail:hover,
 .navLinkDetail:focus {
   color: rgb(179, 0, 255);
 }
@@ -61,9 +59,23 @@
 }
 
 .posterImg {
+  border: 1px solid rgb(179, 0, 255);
   height: 600px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 0px rgb(179, 0, 255);
+}
+
+.active {
+  color: rgb(179, 0, 255);
 }
 
 .boxImg {
+  width: 500px;
+
   margin-right: 20px;
+}
+
+.posterImg {
+  width: 400px;
+  height: 600px;
 }

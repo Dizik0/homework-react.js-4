@@ -11,6 +11,8 @@
 }
 
 .autorItem {
+  width: 200px;
+  height: 400px;
   margin-top: 15px;
 }
 
@@ -22,6 +24,8 @@
 }
 
 .noInformationText {
-  color: white;
-  font-size: 18px;
+  display: block;
+  color: red;
+  font-size: 20px;
+  margin: 0 auto;
 }

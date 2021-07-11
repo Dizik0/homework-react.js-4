@@ -1,8 +1,9 @@
 import { Component } from "react";
-import { NavLink, withRouter } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+import HomePageAPI from "../GetAPI/HomePageAPI";
 
 import style from "./HomePage.module.scss";
-import HomePageAPI from "../GetAPI/HomePageAPI";
 
 class HomePage extends Component {
   state = {
@@ -11,6 +12,7 @@ class HomePage extends Component {
 
   async componentDidMount() {
     const respons = await HomePageAPI();
+
     this.setState({ movies: respons.data.results });
   }
 
@@ -39,4 +41,4 @@ class HomePage extends Component {
   }
 }
 
-export default withRouter(HomePage);
+export default HomePage;
