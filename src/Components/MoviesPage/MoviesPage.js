@@ -7,7 +7,7 @@ import style from "./MoviesPage.module.scss";
 export default class MoviesPage extends Component {
   state = {
     value: "",
-    movies: [],
+    movies: "",
   };
 
   getMovies = async () => {
@@ -27,10 +27,15 @@ export default class MoviesPage extends Component {
   };
 
   componentDidMount() {
-    const array = JSON.parse(window.localStorage.getItem("arr"));
-    const value = JSON.parse(window.localStorage.getItem("value"));
+    if (
+      window.localStorage.getItem("arr") ||
+      JSON.parse(window.localStorage.getItem("value"))
+    ) {
+      const array = JSON.parse(window.localStorage.getItem("arr"));
+      const value = JSON.parse(window.localStorage.getItem("value"));
 
-    this.setState({ movies: array, value: value });
+      this.setState({ movies: array, value: value });
+    }
   }
 
   getValueInput = (e) => {
@@ -41,7 +46,7 @@ export default class MoviesPage extends Component {
     let movie;
     const { movies, value } = this.state;
 
-    if (movies.length !== 0) {
+    if (movies || movies.length !== 0) {
       movie = movies.map((movie) => (
         <li key={movie.id} className={style.itemBoxFilter}>
           <Link
